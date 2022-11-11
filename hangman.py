@@ -50,7 +50,7 @@ Available letters: {letters}""")
             if  player_inp==j:
                 guessed_word[i] = j
         print(f"Good guess:{''.join(guessed_word)}")
-        if win:
+        if ''.join(guessed_word) == word:
             print("win_msg")
             endgame = True
         if guesses < 0:
