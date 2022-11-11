@@ -37,11 +37,12 @@ I am thinking of a word that is {len(word)} letters long.""")
         print(f"""You have {guesses} guesses left.
 Available letters: {letters}""")
         player_inp = input("Please guess a letter: ")
-        if player_input(player_inp) == "":
+        if player_input(player_inp) == " ":
             print((f"Oops! Enter only 1 English letter"))
-        elif player_input(player_inp) not in letters and player_input(player_inp) != "": 
+        elif player_input(player_inp) not in letters and player_input(player_inp) != " ": 
             print((f"Oops! You've already guessed that letter: {''.join(guessed_word)}"))
-        if player_input(player_inp) in letters:
+        elif player_input(player_inp) not in word:
+            print((f"Oops! That letter is not in my word: {''.join(guessed_word)}"))
             letters = letters.replace(player_inp, "")
             guesses -= 1
         elif player_input(player_inp) in letters:
