@@ -22,8 +22,11 @@ def player_input(letters):
     return letters
 
 def output():
+    '''
+    Function makes an output according to the input.
+    '''
     endgame = False
-    guesses = 3
+    guesses = 8
     letters = "abcdefghijklmnopqrstuvwxyz"
     word, list_len = read_from_file("words.txt")
     try_word = list(word)
