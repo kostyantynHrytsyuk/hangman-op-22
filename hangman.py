@@ -25,15 +25,15 @@ def output():
 Welcome to the game, Hangman!
 I am thinking of a word that is {len(word)} letters long.""")
     while not endgame:
-        print("-------")
+        print("-----------")
         print(f"""You have {guesses} guesses left.
 Available letters: {letters}""")
         player_inp = input("Please guess a letter: ")
         if player_input(player_inp) == " ":
             print((f"Oops! That letter is not in my word: {''.join(guessed_word)}"))
-        if player_input(player_inp) not in letters:
+        if player_input(player_inp) not in letters and player_input(player_inp) != " ":
             print((f"Oops! You've already guessed that letter: {''.join(guessed_word)}"))
-        else:
+        if player_input(player_inp) in letters:
             letters = letters.replace(player_inp, "")
         for i,j in word:
             if  player_inp==j:
