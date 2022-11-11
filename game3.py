@@ -1,5 +1,9 @@
 def player_input(letters):
     '''
     '''
-    while len(letters) != 1:
-        print('Please, enter one symbol')
+    if isinstance(letters, str):
+        letters = letters.lower()
+        if len(letters) == 1 and ord(letters) in range(97, 123):
+            return letters
+        else:
+            return False
