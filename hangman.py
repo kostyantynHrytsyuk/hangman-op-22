@@ -14,8 +14,9 @@ def read_from_file(file_name):
 
 def player_input():
     '''
+    Function checks if input is letter and returns it. Otherwise, function returns empty space.
     '''
-    letters = input('Enter a letter please >>> ')
+    letters = input()
     if isinstance(letters, str):
         letters = letters.lower()
         if len(letters) == 1 and ord(letters) in range(97, 123):
@@ -52,6 +53,6 @@ Available letters: {letters}""")
         if win:
             print("win_msg")
             endgame = True
-        if lose:
+        if guesses < 0:
             print("lose_msg")
             endgame = True
