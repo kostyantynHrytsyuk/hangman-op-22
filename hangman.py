@@ -1,5 +1,5 @@
 import random
-def read_from_file(file_name):
+def load_words(file_name):
     '''
     (list) -> (tuple)
     Creats new empty list. Reads the given file and writes each element into list. With random library chooses a word.
@@ -28,7 +28,7 @@ def output():
     endgame = False
     guesses = 8
     letters = "abcdefghijklmnopqrstuvwxyz"
-    word, list_len = read_from_file("words.txt")
+    word, list_len = load_words("words.txt")
     try_word = list(word)
     guessed_word = ["_ " for i in word]
     print(f"""Loading word list from file...
@@ -40,9 +40,9 @@ I am thinking of a word that is {len(word)} letters long.""")
         print(f"""You have {guesses} guesses left.
 Available letters: {letters}""")
         player_inp = input("Please guess a letter: ")
-        if player_input(player_inp) == " ":
+        if player_input(player_inp) == "":
             print((f"Oops! Enter only 1 English letter"))
-        elif player_input(player_inp) not in letters and player_input(player_inp) != " ": 
+        elif player_input(player_inp) not in letters and player_input(player_inp) != "": 
             print((f"Oops! You've already guessed that letter: {''.join(guessed_word)}"))
         elif player_input(player_inp) not in word:
             print((f"Oops! That letter is not in my word: {''.join(guessed_word)}"))
