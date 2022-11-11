@@ -4,7 +4,7 @@ def player_input():
     '''
     letters = input()
     letters = letters.lower()
-    if len(letters) == 1 and ord(letters) in range(97, 123):
-        return letters
-    else:
-        return ' '
+    if len(letters) != 1 or ord(letters) not in range(97, 123):
+        return ''
+    return letters
+    
