@@ -1,6 +1,10 @@
 import random
 
 def wordfill(guest):
+    ''' 
+    function fitch make from _*len
+    to guested word
+    '''
     global wordfilled
 
 
@@ -24,9 +28,9 @@ def game():
         #try guest=
         if guest.lower in letters and guest in word:
             print('Good guess:',wordfill(guest))
+            letters.pop(guest)
             if wordfilled==word:
-                print('------------')
-                print('Congratulations, you won!')
+                print('------------\nCongratulations, you won!')
                 return True
         else:
             print('Oops! That letter is not in my word:',wordfilled)
