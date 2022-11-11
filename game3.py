@@ -8,4 +8,3 @@ def player_input():
         return letters
     else:
         return ' '
-print(player_input())
