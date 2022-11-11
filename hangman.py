@@ -41,9 +41,9 @@ Available letters: {letters}""")
             print((f"Oops! Enter only 1 English letter"))
         elif player_input(player_inp) not in letters and player_input(player_inp) != "": 
             print((f"Oops! You've already guessed that letter: {''.join(guessed_word)}"))
-        elif player_input(player_inp) not in word:
-            print((f"Oops! That letter is not in my word: {''.join(guessed_word)}"))
+        if player_input(player_inp) in letters:
             letters = letters.replace(player_inp, "")
+<<<<<<< HEAD
             guesses -= 1
         elif player_input(player_inp) in letters:
             letters = letters.replace(player_inp, "")
@@ -55,6 +55,14 @@ Available letters: {letters}""")
             print(f"Good guess:{''.join(guessed_word)}")
         if ''.join(guessed_word) == word:
             print("""------------\nCongratulations, you won!""")
+=======
+        for i,j in word:
+            if  player_inp==j:
+                guessed_word[i] = j
+        print(f"Good guess:{''.join(guessed_word)}")
+        if ''.join(guessed_word) == word:
+            print("win_msg")
+>>>>>>> d794b05956a744c33474041b226862ebaa96e110
             endgame = True
         elif guesses <= 0:
             print(f"""-----------\nSorry, you ran out of guesses. The word was '{word}'.""")
