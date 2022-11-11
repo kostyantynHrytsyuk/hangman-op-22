@@ -7,4 +7,4 @@ def player_input():
         if len(letters) == 1 and ord(letters) in range(97, 123):
             return letters
         else:
-            return " "
+            return ' '
