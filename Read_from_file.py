@@ -15,4 +15,3 @@ def read_from_file(file_name):
                 return ranword, len(ranlist[0])
             else:
                 return None
-print(read_from_file("words.txt"))
