@@ -1,8 +1,13 @@
+'''
+Our game is very simple: the player must guess a word letter by letter.
+'''
 import random
+
 def read_from_file(file_name):
     '''
     (list) -> (tuple)
-    Creats new empty list. Reads the given file and writes each element into list. With random library chooses a word.
+    Creats new empty list. 
+    Reads the given file and writes each element into list. With random library chooses a word.
     Returns tuple first element of which - word,second lenght of list
     '''
     ranlist = []
@@ -63,3 +68,7 @@ Available letters: {letters}""")
             print(f"""-----------\nSorry, you ran out of guesses. The word was '{word}'.""")
             endgame = True
 output()
+
+if __name__ == "__main__":
+    import doctest
+    print(doctest.testmod())
