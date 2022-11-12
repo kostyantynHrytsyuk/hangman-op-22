@@ -74,8 +74,6 @@ Available letters: {letters}""")
         elif guesses <= 0:
             print(f"""-----------\nSorry, you ran out of guesses. The word was '{word}'.""")
             endgame = True
-output()
 
 if __name__ == "__main__":
-    import doctest
-    print(doctest.testmod())
+    output()
