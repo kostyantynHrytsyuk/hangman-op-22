@@ -1,4 +1,5 @@
 import random
+
 def load_words(file_name):
     '''
     (list) -> (tuple)
